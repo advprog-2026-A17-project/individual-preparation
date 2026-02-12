@@ -22,9 +22,12 @@ public class ArithmeticUtility {
 
 
     public double divide(double o1, double o2) {
-        
-        return 0.0;
+        if (o2 == 0.0) {
+            throw new IllegalArgumentException("Cannot divide by zero");
+        }
+        return o1 / o2;
     }
+    
 
     public double exponent(double o1, int n) {
         // TODO: Implement me properly!
