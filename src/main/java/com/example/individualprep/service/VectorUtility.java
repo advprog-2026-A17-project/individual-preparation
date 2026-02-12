@@ -9,6 +9,7 @@ public class VectorUtility {
     
     public double[] add(double[] v1, double[] v2) {
         // TODO: Implement me properly!
+        validateNotNull(v1, v2);
         validateSameSize(v1, v2);
 
         int size = v1.length;
@@ -41,6 +42,12 @@ public class VectorUtility {
     }
 
     // Helpers
+    private void validateNotNull(double[] v1, double[] v2) {
+        if (v1 == null || v2 == null) {
+            throw new IllegalArgumentException("Vectors must not be null");
+        }
+    }
+
     private void validateSameSize(double[] v1, double[] v2) {
         if (v1.length != v2.length) {
             throw new IllegalArgumentException("Vectors must have same size");
