@@ -22,7 +22,8 @@ public class ArithmeticUtility {
 
 
     public double divide(double o1, double o2) {
-
+        
+        return 0.0;
     }
 
     public double exponent(double o1, int n) {
