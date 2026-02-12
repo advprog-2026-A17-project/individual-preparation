@@ -26,7 +26,14 @@ public class ArithmeticUtility {
     }
 
     public double exponent(double o1, int n) {
-        // TODO: Implement me properly!
-        return 0.0;
+        if (n == 0) return 1.0;
+
+        double result = 1.0;
+        int power = Math.abs(n);
+        for (int i = 0; i < power; i++) {
+            result *= o1;
+        }
+
+        return n > 0 ? result : 1.0 / result;
     }
 }
