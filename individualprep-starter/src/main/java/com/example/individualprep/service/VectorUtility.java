@@ -17,7 +17,14 @@ public class VectorUtility {
 
     public double[] multiply(double[] v1, int x) {
         // TODO: Implement me properly!
-        return new double[] { 0.0, 0.0, 0.0 };
+        validateNotNull(v1,v1);
+
+        double[] result = new double[v1.length];
+        for(int i = 0; i < v1.length;i++){
+            result[i] = v1[i] * x;
+        }
+
+        return result;
     }
     
     public double dotProduct(double[] v1, double[] v2) {
@@ -28,5 +35,10 @@ public class VectorUtility {
     public double norm(double[] v1) {
         // TODO: Implement me properly!
         return 0.0;
+    }
+    private void validateNotNull(double[] v1, double[] v2) {
+        if (v1 == null || v2 == null) {
+            throw new IllegalArgumentException("Vectors must not be null");
+        }
     }
 }
