@@ -16,8 +16,7 @@ public class ArithmeticUtility {
     }
 
     public double multiply(double o1, double o2) {
-        // TODO: Implement me properly!
-        return 0.0;
+        return o1 * o2;
     }
 
     public double divide(double o1, double o2) {
@@ -26,14 +25,7 @@ public class ArithmeticUtility {
     }
 
     public double exponent(double o1, int n) {
-        if (n == 0) return 1.0;
-
-        double result = 1.0;
-        int power = Math.abs(n);
-        for (int i = 0; i < power; i++) {
-            result *= o1;
-        }
-
-        return n > 0 ? result : 1.0 / result;
+        // TODO: Implement me properly!
+        return 0.0;
     }
 }
