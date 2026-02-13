@@ -5,6 +5,7 @@ on:
       - main
       - 'feat/**'
       - 'fix/**'
+      - 'chore/**'
   pull_request:
     types: [opened, synchronize, reopened]
 
