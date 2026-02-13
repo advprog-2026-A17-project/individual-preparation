@@ -3,6 +3,9 @@ package com.example.individualprep.service;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Test;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 class VectorUtilityTest {
 
@@ -15,6 +18,27 @@ class VectorUtilityTest {
 
         double[] expected = new double[]{9, 6, 3};
         double[] result = vectorUtility.subtract(v1, v2);
+    void multiply_shouldReturnCorrectResult() {
+        VectorUtility vectorUtility = new VectorUtility();
+
+        double[] v1 = {5, 6, 7};
+        int x = 5;
+
+        double[] expected = new double[]{25, 30, 35};
+        double[] result = vectorUtility.multiply(v1, x);
+      
+        assertArrayEquals(expected, result);
+    }    
+  
+    @Test  
+    void add_shouldReturnCorrectResult() {
+        VectorUtility vectorUtility = new VectorUtility();
+
+        double[] v1 = {5, 6, 7};
+        double[] v2 = {3, 1, 2};
+
+        double[] expected = new double[]{8, 7, 9};
+        double[] result = vectorUtility.add(v1, v2);
 
         assertArrayEquals(expected, result);
     }
@@ -28,11 +52,32 @@ class VectorUtilityTest {
 
         assertThrows(IllegalArgumentException.class, () ->
                 vectorUtility.subtract(v1, v2)
+    void multiply_shouldThrowException_whenVectorNull() {
+        VectorUtility vectorUtility = new VectorUtility();
+
+        double[] v1 = null;
+        int x = 5;
+
+        assertThrows(IllegalArgumentException.class, () ->
+                vectorUtility.multiply(v1, x)
+        );
+    }
+  
+    @Test  
+    void add_shouldThrowException_whenVectorNull() {
+        VectorUtility vectorUtility = new VectorUtility();
+
+        double[] v1 = {};
+        double[] v2 = {3, 1, 2};
+
+        assertThrows(IllegalArgumentException.class, () ->
+                vectorUtility.add(v1, v2)
         );
     }
 
     @Test
     void subtract_shouldThrowException_whenDifferentLength() {
+    void add_shouldThrowException_whenDifferentLength() {
         VectorUtility vectorUtility = new VectorUtility();
 
         double[] v1 = {5, 6};
@@ -40,6 +85,7 @@ class VectorUtilityTest {
 
         assertThrows(IllegalArgumentException.class, () ->
                 vectorUtility.subtract(v1, v2)
+                vectorUtility.add(v1, v2)
         );
     }
 }
