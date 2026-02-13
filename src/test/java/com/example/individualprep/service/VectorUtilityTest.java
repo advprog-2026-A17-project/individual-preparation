@@ -141,4 +141,16 @@ class VectorUtilityTest {
                 vectorUtility.dotProduct(v1, v2)
         );
     }
+
+    @Test
+    void norm_shouldReturnCorrectResult() {
+        VectorUtility vectorUtility = new VectorUtility();
+
+        double[] v1 = {5, 6, 7};
+
+        double expected = Math.sqrt(110);
+        double result = vectorUtility.norm(v1);
+
+        assertEquals(expected, result);
+    }
 }
