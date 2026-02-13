@@ -25,9 +25,10 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-webmvc'
 	testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-    checkstyle {
-        toolVersion = "10.12.0"
-    }
+}
+
+checkstyle {
+    toolVersion = "10.12.0"
 }
 
 tasks.named('test') {
@@ -43,10 +44,10 @@ jacocoTestReport {
     }
 }
 
-
 sonar {
     properties {
         property("sonar.projectKey", "advprog-2026-A17-project_individual-preparation")
         property("sonar.organization", "advprog-2026-a17-project")
+        property("sonar.host.url", "https://sonarcloud.io")
     }
 }
