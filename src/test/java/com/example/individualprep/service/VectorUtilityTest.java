@@ -104,4 +104,41 @@ class VectorUtilityTest {
                 vectorUtility.subtract(v1, v2)
         );
     }
+
+    @Test
+    void dot_shouldReturnCorrectResult() {
+        VectorUtility vectorUtility = new VectorUtility();
+
+        double[] v1 = {5, 6, 7};
+        double[] v2 = {5,6,7};
+
+        double expected = 110;
+        double result = vectorUtility.dotProduct(v1, v2);
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    void dot_shouldThrowException_whenVectorNull() {
+        VectorUtility vectorUtility = new VectorUtility();
+
+        double[] v1 = {};
+        double[] v2 = {3, 1, 2};
+
+        assertThrows(IllegalArgumentException.class, () ->
+                vectorUtility.dotProduct(v1, v2)
+        );
+    }
+
+    @Test
+    void dot_shouldThrowException_whenDifferentLength() {
+        VectorUtility vectorUtility = new VectorUtility();
+
+        double[] v1 = {5, 6};
+        double[] v2 = {3, 1, 2};
+
+        assertThrows(IllegalArgumentException.class, () ->
+                vectorUtility.dotProduct(v1, v2)
+        );
+    }
 }

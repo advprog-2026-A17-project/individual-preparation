@@ -91,4 +91,24 @@ class ArithmeticUtilityTest {
 
         assertEquals(-5.0, result);
     }
+
+    @Test
+    void add_shouldReturnCorrectResult_negative() {
+        ArithmeticUtility util = new ArithmeticUtility();
+        double a = 7;
+        double b = -6;
+        double expected = 1.0;
+
+        assertEquals(expected, util.add(a,b));
+    }
+
+    @Test
+    void subtract_shouldReturnCorrectResult_negative() {
+        ArithmeticUtility util = new ArithmeticUtility();
+        double a = 7;
+        double b = -6;
+        double expected = 13.0;
+
+        assertEquals(expected, util.subtract(a,b));
+    }
 }
